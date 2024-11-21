@@ -1,11 +1,26 @@
+:root{
+    --primary-color: #f6cac2;
+    --box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
 .logo{
     width: 66px;
     height: 66px;
+    border-radius: 6px;
+}
+.search-button{
+    border-radius: 6px;
+    padding: 5px 5px;
+    text-decoration: none;
+    text-transform: capitalize;
+    background: var(--primary-color);
+    box-shadow: var(--box-shadow);
 }
 .add-task{
-    color: black;
-    background-color: #f6cac2;
     border-radius: 6px;
-    border: 1px solid #f6cac2;
+    padding: 7px 7px;
     text-decoration: none;
+    text-transform: capitalize;
+    background: var(--primary-color);
+    box-shadow: var(--box-shadow);
+    color: black;
 }
