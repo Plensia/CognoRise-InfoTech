@@ -6,6 +6,7 @@
     width: 66px;
     height: 66px;
     border-radius: 6px;
+    padding: 2px 2px;
 }
 .search-button{
     border-radius: 6px;
@@ -17,10 +18,17 @@
 }
 .add-task{
     border-radius: 6px;
-    padding: 7px 7px;
+    padding: 5px 5px;
     text-decoration: none;
     text-transform: capitalize;
     background: var(--primary-color);
     box-shadow: var(--box-shadow);
     color: black;
+}
+.tab-container{
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    background-color: bisque;
+    padding: 10px 10px;
 }
