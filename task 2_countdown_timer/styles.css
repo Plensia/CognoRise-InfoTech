@@ -62,3 +62,41 @@ h1{
 .input-section button:hover{
     background-color: #2980b9;
 }
+
+.countdown{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.countdown-item{
+    flex: 1;
+    min-width: 100px;
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.countdown-value{
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label{
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.event-name{
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #2c3e50;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
