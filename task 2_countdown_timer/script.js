@@ -1,69 +1,55 @@
-//variables to store the interval timer and target date
 let countdownInterval;
 let targetDate;
 
-//function to intiate countdown timer
-function startCountdown(){
-   if(countdownInterval){
-    clearInterval(countdownInterval);
-   }
-}
-//get user input values from the form
-const datetimeInput = document.getElementById('datetime-input').value;
-const eventName = document.getElementById('event-input').value;
+function startCountdown() {
+    // Clear any existing countdown
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+    }
 
-//check if date/time was provided
-if(!datetimeInput){
-    alert('Please select a date and time');
-    return;
-}
+    // Get input values
+    const datetimeInput = document.getElementById('datetime-input').value;
+    const eventName = document.getElementById('event-input').value;
 
-// Convert input datetime to milliseconds timestamp and store it
+    // Validate input
+    if (!datetimeInput) {
+        alert('Please select a date and time');
+        return;
+    }
+
+    // Set target date and event name
     targetDate = new Date(datetimeInput).getTime();
-    
-// Display the event name, or 'Countdown' if none provided
     document.getElementById('event-name').textContent = eventName || 'Countdown';
 
-// Run the first update immediately instead of waiting for the first interval
+    // Update countdown immediately
     updateCountdown();
 
-// Update the countdown every second (1000 milliseconds)
+    // Set interval to update countdown every second
     countdownInterval = setInterval(updateCountdown, 1000);
+}
 
-/**
- * Update countdown display
- * Calculates and displays the remaining time until target date
- */
-    function updateCountdown() {
-        // Get current time in milliseconds
-        const now = new Date().getTime();
-        
-        // Calculate the time difference between now and target date
-        const distance = targetDate - now;
-    
-        // If countdown has finished (distance is negative)
-        if (distance < 0) {
-            // Stop the interval
-            clearInterval(countdownInterval);
-            
-            // Set all display values to '00'
-            document.getElementById('days').textContent = '00';
-            document.getElementById('hours').textContent = '00';
-            document.getElementById('minutes').textContent = '00';
-            document.getElementById('seconds').textContent = '00';
-            
-            // Add '(Finished)' to the event name
-            document.getElementById('event-name').textContent += ' (Finished)';
-            return;
-        }
-        
-    // Convert milliseconds to days, hours, minutes, and seconds
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    // Check if countdown is finished
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById('days').textContent = '00';
+        document.getElementById('hours').textContent = '00';
+        document.getElementById('minutes').textContent = '00';
+        document.getElementById('seconds').textContent = '00';
+        document.getElementById('event-name').textContent += ' (Finished)';
+        return;
+    }
+
+    // Calculate time units
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Update  display with padded numbers (e.g., '05' instead of '5')
+    // Update display
     document.getElementById('days').textContent = String(days).padStart(2, '0');
     document.getElementById('hours').textContent = String(hours).padStart(2, '0');
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
@@ -71,4 +57,7 @@ if(!datetimeInput){
 }
 
 // Set minimum datetime to current time
-document.getElementById('datetime-input').setAttribute('min', new Date().toISOString().slice(0,16));
+const now = new Date();
+const tzoffset = now.getTimezoneOffset() * 60000;
+const localISOTime = (new Date(Date.now() - tzoffset)).toISOString().slice(0,16);
+document.getElementById('datetime-input').setAttribute('min', localISOTime);
