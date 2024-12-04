@@ -82,3 +82,14 @@ function addTask() {
       </div>
     `;
   }
+// Save to localStorage
+function saveData() {
+    localStorage.setItem("todoData", listContainer.innerHTML);
+  }
+
+  // Load from localStorage
+  function loadData() {
+    listContainer.innerHTML = localStorage.getItem("todoData") || "";
+  }
+
+  loadData();
