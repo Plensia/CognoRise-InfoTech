@@ -100,3 +100,9 @@ h1{
     font-size: 1.2rem;
     font-weight: 500;
 }
+
+@media (max-width: 480px){
+    .countdown-item{
+        min-width: calc(50% - 0.5rem);
+    }
+}
