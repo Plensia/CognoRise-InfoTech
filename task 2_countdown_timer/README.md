@@ -20,3 +20,9 @@ Just download the files and open `index.html` in your web browser. No dependenci
 - Completion state indicator
 
 ## Preview
+![Screenshot 2024-12-04 144711](https://github.com/user-attachments/assets/2570add0-eda8-4c9a-bf6e-9ec189dd58aa)
+
+![Screenshot 2024-12-04 145659](https://github.com/user-attachments/assets/a479ea60-c310-4cfd-8218-4012aae63fb1)
+
+
+
