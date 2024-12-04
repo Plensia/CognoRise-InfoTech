@@ -17,3 +17,15 @@ if(!datetimeInput){
     alert('Please select a date and time');
     return;
 }
+
+// Convert input datetime to milliseconds timestamp and store it
+    targetDate = new Date(datetimeInput).getTime();
+    
+// Display the event name, or 'Countdown' if none provided
+    document.getElementById('event-name').textContent = eventName || 'Countdown';
+
+// Run the first update immediately instead of waiting for the first interval
+    updateCountdown();
+
+// Update the countdown every second (1000 milliseconds)
+    countdownInterval = setInterval(updateCountdown, 1000);
