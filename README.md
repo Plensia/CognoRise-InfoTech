@@ -19,8 +19,8 @@ Hey there! This is a straightforward todo list app I built using vanilla JavaScr
 - Google Fonts (Poppins - because pretty fonts matter)
 
 ## Preview
-![Screenshot 2024-12-04 093236](https://github.com/user-attachments/assets/0476f3b0-4333-4291-b882-b6442ea774dc)
-![Screenshot 2024-12-04 093321](https://github.com/user-attachments/assets/b6ec8611-ac54-4806-b551-aecdef18f3aa)
+![Screenshot 2024-12-04 093236](https://github.com/user-attachments/assets/492b3618-1657-4ce3-abe4-460b6ee6ce4a)
+![Screenshot 2024-12-04 093321](https://github.com/user-attachments/assets/46b8c364-05a5-4557-853b-deec93f03a18)
 
 
 ## Want to make it better?
