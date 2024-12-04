@@ -31,3 +31,24 @@ function addTask() {
       saveData();
     }
   });
+      // Delete task
+      function deleteTask(element) {
+        element.parentElement.parentElement.remove();
+        saveData();
+      }
+  
+      // Edit task
+      function editTask(element) {
+        const li = element.parentElement.parentElement;
+        const task = li.firstChild.textContent.trim();
+        
+        li.innerHTML = `
+          <input type="text" value="${task}" class="editing">
+          <div class="actions">
+            <i class="bi bi-check" onclick="saveEdit(this)"></i>
+            <i class="bi bi-x" onclick="cancelEdit(this, '${task}')"></i>
+          </div>
+        `;
+        
+        li.querySelector('input').focus();
+      }
