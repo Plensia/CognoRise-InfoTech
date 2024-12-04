@@ -57,16 +57,18 @@ if(!datetimeInput){
             return;
         }
         
-          // Calculate the different time units
     // Convert milliseconds to days, hours, minutes, and seconds
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Update the display with padded numbers (e.g., '05' instead of '5')
+    // Update  display with padded numbers (e.g., '05' instead of '5')
     document.getElementById('days').textContent = String(days).padStart(2, '0');
     document.getElementById('hours').textContent = String(hours).padStart(2, '0');
     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 }
+
+// Set minimum datetime to current time
+document.getElementById('datetime-input').setAttribute('min', new Date().toISOString().slice(0,16));
