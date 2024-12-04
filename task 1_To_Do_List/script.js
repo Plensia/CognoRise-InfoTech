@@ -31,13 +31,13 @@ function addTask() {
       saveData();
     }
   });
-      // Delete task
+// Delete task
       function deleteTask(element) {
         element.parentElement.parentElement.remove();
         saveData();
       }
   
-      // Edit task
+// Edit task
       function editTask(element) {
         const li = element.parentElement.parentElement;
         const task = li.firstChild.textContent.trim();
@@ -52,7 +52,7 @@ function addTask() {
         
         li.querySelector('input').focus();
       }
-     // Save edited task
+// Save edited task
      function saveEdit(element) {
         const li = element.parentElement.parentElement;
         const newTask = li.querySelector('input').value;
@@ -71,4 +71,14 @@ function addTask() {
         `;
         saveData();
       }
-  
+// Cancel editing
+ function cancelEdit(element, originalTask) {
+    const li = element.parentElement.parentElement;
+    li.innerHTML = `
+      ${originalTask}
+      <div class="actions">
+        <i class="bi bi-pencil" onclick="editTask(this)"></i>
+        <i class="bi bi-trash" onclick="deleteTask(this)"></i>
+      </div>
+    `;
+  }
