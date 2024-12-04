@@ -52,3 +52,23 @@ function addTask() {
         
         li.querySelector('input').focus();
       }
+     // Save edited task
+     function saveEdit(element) {
+        const li = element.parentElement.parentElement;
+        const newTask = li.querySelector('input').value;
+        
+        if (newTask.trim() === '') {
+          alert("Task cannot be empty!");
+          return;
+        }
+        
+        li.innerHTML = `
+          ${newTask}
+          <div class="actions">
+            <i class="bi bi-pencil" onclick="editTask(this)"></i>
+            <i class="bi bi-trash" onclick="deleteTask(this)"></i>
+          </div>
+        `;
+        saveData();
+      }
+  
