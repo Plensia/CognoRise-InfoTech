@@ -24,3 +24,10 @@ function addTask() {
     inputBox.value = "";
     saveData();
   }
+  //For checking and unchecking of tasks
+  listContainer.addEventListener("click", (e) => {
+    if (e.target.tagName === "LI") {
+      e.target.classList.toggle("checked");
+      saveData();
+    }
+  });
