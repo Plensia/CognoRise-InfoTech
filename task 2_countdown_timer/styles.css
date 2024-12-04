@@ -25,3 +25,40 @@ h1{
     margin-bottom: 1.5rem;
     font-size: 2rem;
 }
+
+.input-section{
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.input-section input{
+    flex: 1;
+    min-width: 200px;
+    padding: 0.75 rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-section input:focus{
+    border-color: #3498db;
+}
+
+.input-section button{
+    padding: 0.75rem 1.5rem;
+    background-color: #3498db;
+    color: whitesmoke;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.input-section button:hover{
+    background-color: #2980b9;
+}
